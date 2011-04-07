@@ -40,4 +40,6 @@ module CarrierWave
   end # ActiveRecord
 end # CarrierWave
 
-ActiveRecord::Base.extend CarrierWave::ActiveRecord
+ActiveSupport.on_load(:active_record) do
+  ActiveRecord::Base.extend CarrierWave::ActiveRecord
+end
